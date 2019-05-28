@@ -22,6 +22,4 @@ Things you may want to cover:
 * Deployment instructions
 
 * ...
-# email-valiadtion
-# email-validations
 # email-validation-task

@@ -1,0 +1,60 @@
+<%= form_with(model: validation, local: true) do |form| %>
+  <% if validation.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(validation.errors.count, "error") %> prohibited this validation from being saved:</h2>
+
+      <ul>
+      <% validation.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="form-group">
+    <%= form.label :email , class: "control-label"%>
+    <%= form.text_field :email , id: 'email', class: "form-control", style: "width:60%;"%>
+  </div>
+  <%= submit_tag 'valiadte your email', :type => 'button', id: 'validate', class: 'btn button2'%>
+<% end %>
+<script>
+
+
+  // verify email address via AJAX call
+$('#validate').on('click', function (){
+    // set endpoint and your access key
+    var access_key = '1f01e549bca1686923035a6bedaada58';
+    var email_address = $("#email").val();
+  $.ajax({
+      url: 'http://apilayer.net/api/check?access_key=' + access_key + '&email=' + email_address,   
+      dataType: 'jsonp',
+      success: function(json) {
+
+      // Access and use your preferred validation result objects
+      console.log(json.format_valid);
+      console.log(json.smtp_check);
+      console.log(json.score);
+      console.log(email_address);
+      if (json.smtp_check  == false){
+        alert("Your Email is invalid");
+      }
+      if (json.smtp_check  == true && json.format_valid == true){
+        alert("This is a valid Email");
+      }
+      }
+  });
+});
+</script>
+<style>
+.button2 {
+  background-color: #008CBA;
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;} /* Blue */
+</style>

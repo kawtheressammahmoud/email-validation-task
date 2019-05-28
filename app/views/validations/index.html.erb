@@ -1,0 +1,60 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Validations</h1>
+
+<table id="customers">
+  <thead>
+    <tr>
+      <th>Email</th>
+      <th colspan="4"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @validations.each do |validation| %>
+      <tr>
+        <td><%= validation.email %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+<style>
+#customers {
+  font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+  /* border-collapse: collapse; */
+  width: 100%;
+}
+
+#customers td, #customers th {
+  /* border: 1px solid #ddd; */
+  padding: 8px;
+  width: 100%;
+}
+
+#customers tr:nth-child(even){background-color: #f2f2f2;}
+
+#customers tr:hover {background-color: #ddd;}
+
+#customers th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #008CBA;
+  color: white;
+}
+.custom_div{
+  background-color: #008CBA;
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;} /* Blue */
+}
+</style>
+  <%= link_to 'Validate Your Email', new_validation_path , class: 'btn custom_div'%>

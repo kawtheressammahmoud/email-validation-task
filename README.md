@@ -23,3 +23,4 @@ Things you may want to cover:
 
 * ...
 # email-validation-task
+I have done this task by two methods the first is intergrating the API with rails app they deployed on https://email-validation-task.herokuapp.com/ , and the second is intergrating the API with HTTParty through model called client.rb you can test it through cloning the application and run it locally then run "ruby client.rb" 

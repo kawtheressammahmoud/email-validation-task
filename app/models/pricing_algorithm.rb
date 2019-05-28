@@ -1,5 +1,6 @@
 
-brand_rating = brand.rating
+# brand_rating = brand.rating
+brand_rating
 base_price = price_reference - product_database.shipping_cost
 arr = []
 (0.75..0.95).step(0.025).each do |i|

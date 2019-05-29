@@ -35,11 +35,11 @@ $('#validate').on('click', function (){
       console.log(json.smtp_check);
       console.log(json.score);
       console.log(email_address);
-      if (json.smtp_check  == false){
-        alert("Your Email is invalid");
+      if (json.smtp_check  == false || json.format_valid == false){
+        alert("Your email address is invalid. Please enter a valid address");
       }
       if (json.smtp_check  == true && json.format_valid == true){
-        alert("This is a valid Email");
+        alert("Your email address is Email, you had successfully validate your Email");
       }
       }
   });

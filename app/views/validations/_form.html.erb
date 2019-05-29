@@ -26,7 +26,7 @@ $('#validate').on('click', function (){
     var access_key = '1f01e549bca1686923035a6bedaada58';
     var email_address = $("#email").val();
   $.ajax({
-      url: 'http://apilayer.net/api/check?access_key=' + access_key + '&email=' + email_address,   
+      url: 'https://apilayer.net/api/check?access_key=' + access_key + '&email=' + email_address,   
       dataType: 'jsonp',
       success: function(json) {
 

@@ -10,7 +10,7 @@ gem 'bcrypt', '~> 3.1.7'
 gem 'rails', '~> 5.2.3'
 # Use sqlite3 as the database for Active Record
 # Use Puma as the app server
-gem 'puma', '~> 3.7'
+gem 'puma', '~> 3.12'
 gem 'thin'
 gem 'httparty', '~> 0.13.7'
 # Use SCSS for stylesheets
